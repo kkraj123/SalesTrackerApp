@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="4dp"
+    xmlns:tools="http://schemas.android.com/tools">
+    <TextView
+        android:id="@+id/currentDateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="today date"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"
+        android:textStyle="normal"
+        android:textSize="15sp"/>
+
+    <LinearLayout
+        android:layout_below="@+id/currentDateTV"
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Customer Name"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product"
+            android:layout_weight="1"
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Amount"
+            android:textSize="12sp"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif"/>
+    </LinearLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_below="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:elevation="0.5dp"
+        app:cardBackgroundColor="@color/colorWhite">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/customerNameTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    tools:text="custmerName"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
+
+                <TextView
+                    android:id="@+id/productTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="custmerName"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
+
+                <TextView
+                    android:id="@+id/quantityTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="custmerName"
+                    android:textSize="14sp"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
+
+                <TextView
+                    android:id="@+id/amountTV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="custmerName"
+                    android:textSize="14sp"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
