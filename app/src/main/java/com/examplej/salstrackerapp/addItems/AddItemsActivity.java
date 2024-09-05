@@ -135,7 +135,7 @@ public class AddItemsActivity extends AppCompatActivity {
             if (!addProductItemModelList.isEmpty()) {
                 productSaleViewModel.insertProductSale(addProductItemModelList);
                 Toast.makeText(this, "Sale date added success", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(AddItemsActivity.this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                finish();
             }
         });
         binding.addItemBtn.setOnClickListener(v -> {
@@ -180,7 +180,7 @@ public class AddItemsActivity extends AppCompatActivity {
                 Intent intent = new Intent(AddItemsActivity.this, ItemsActivity.class);
                 productActivityLaunch.launch(intent);
             } else {
-                binding.customerET.setError("Please enter customer name");
+                binding.customerET.setError("Please select customer");
             }
         });
     }

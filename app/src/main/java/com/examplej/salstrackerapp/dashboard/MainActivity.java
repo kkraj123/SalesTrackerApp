@@ -59,6 +59,28 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        new AlertDialog.Builder(this)
+                .setTitle("App")
+                .setMessage("Are you sure you want exit app")
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        System.exit(0);
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
     private void getReceiveData() {
         sharedViewModel.getSharedData().observe(this, new Observer<String>() {
             @Override
@@ -115,26 +137,9 @@ public class MainActivity extends AppCompatActivity {
             replaceFragment(new DailyDetailDataFragment());
 
         });
-        binding.backBtn.setOnClickListener(v -> {
-            new AlertDialog.Builder(this)
-                    .setTitle("App")
-                    .setMessage("Are you sure you want exit app")
-                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            System.exit(0);
-                            dialog.dismiss();
-                        }
-                    })
-                    .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .show();
-        });
+
     }
+
 
     private void setColorToTabBackground(View view) {
         GradientDrawable drawable = (GradientDrawable) view.getBackground();
